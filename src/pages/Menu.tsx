@@ -10,11 +10,11 @@ import burger from "@/assets/burger.jpg";
 const menuItems = [
   {
     id: 1,
-    name: "Crispy Golden Nuggets",
-    description: "Perfectly fried chicken nuggets",
-    price: "$8.99",
+    name: "Manglore Buns",
+    description: "Freshly made manglore Buns with chutney",
+    price: "Rs. 50",
     image: nuggets,
-    category: "Fast Food",
+    category: "South Indian",
   },
   {
     id: 2,
