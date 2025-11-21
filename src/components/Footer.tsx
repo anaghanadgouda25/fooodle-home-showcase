@@ -15,7 +15,7 @@ const Footer = () => {
               <span className="text-2xl font-bold text-primary">Fooodle</span>
             </Link>
             <p className="text-muted-foreground mb-4">
-              Delicious food delivered fresh to your doorstep. Experience quality in every bite.
+              Delicious food services fresh to your footstep. Experience quality in every bite.
             </p>
             <div className="flex gap-4">
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
