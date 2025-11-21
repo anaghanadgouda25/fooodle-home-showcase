@@ -14,7 +14,7 @@ const Hero = () => {
           <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6">
             Delicious Food,
             <br />
-            <span className="text-secondary">Delivered Fast</span>
+            <span className="text-secondary">Order Fast</span>
           </h1>
           <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
             Fresh, hot meals prepared with love and delivered straight to your door. 
