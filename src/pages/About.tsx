@@ -21,11 +21,11 @@ const About = () => {
               <h2 className="text-3xl font-bold mb-4 text-card-foreground">Our Story</h2>
               <p className="text-muted-foreground mb-4">
                 Fooodle was born from a simple idea: everyone deserves access to delicious, 
-                high-quality food delivered right to their door. We started in a small kitchen 
+                high-quality food services right to their footstep. We started in a small kitchen 
                 with a passion for creating memorable meals.
               </p>
               <p className="text-muted-foreground">
-                Today, we serve thousands of happy customers daily, maintaining the same 
+                Today, we aim to serve thousands of happy customers daily, maintaining the same 
                 commitment to quality and taste that we started with.
               </p>
             </div>
@@ -45,9 +45,9 @@ const About = () => {
                 <div className="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center">
                   <Clock className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold mb-2 text-card-foreground">Fast Delivery</h3>
+                <h3 className="text-xl font-bold mb-2 text-card-foreground">Fast Service</h3>
                 <p className="text-muted-foreground">
-                  Hot, fresh food delivered in 30 minutes or less
+                  Hot, fresh food that you can order and pick up in minutes
                 </p>
               </div>
 
