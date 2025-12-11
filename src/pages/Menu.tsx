@@ -2,45 +2,42 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import nuggets from "@/assets/nuggets.jpg";
-import macCheese from "@/assets/mac-cheese.jpg";
+import dosaPic from "@/assets/dosa_pic.jpg";
+import bunsPic from "@/assets/buns_pic.jpg";
+import idliPic from "@/assets/idli_pic.jpg";
 import fries from "@/assets/fries.jpg";
-import burger from "@/assets/burger.jpg";
-import burger from "@/assets/dosa_pic.jpg";
-import burger from "@/assets/buns_pic.jpg";
-import burger from "@/assets/idli_pic.jpg";
 
 const menuItems = [
   {
     id: 1,
-    name: "Manglore Buns",
-    description: "Freshly made manglore Buns with chutney",
+    name: "Mangalore Buns",
+    description: "Freshly made Mangalore Buns with coconut chutney",
     price: "Rs. 50",
-    image: dosa_pic,
+    image: bunsPic,
     category: "South Indian",
   },
   {
     id: 2,
     name: "Mini Meals",
-    description: "Meal containing Rice and Chapati/Puri",
-    price: "Rs.120",
-    image: buns_pic,
+    description: "Rice with sambar, rasam, chapati/puri and sides",
+    price: "Rs. 120",
+    image: dosaPic,
     category: "South Indian",
   },
   {
     id: 3,
-    name: "Idly Vada",
-    description: "A plate of Idly Vada with Sambar and Chutney",
-    price: "Rs.40",
-    image: fries,
+    name: "Idli Vada",
+    description: "Soft idlis with crispy vada, sambar and chutney",
+    price: "Rs. 40",
+    image: idliPic,
     category: "Breakfast",
   },
   {
     id: 4,
-    name: " Masala Dosa",
-    description: "Masala Dosa with chutney and sambar",
-    price: "Rs. 40",
-    image: idli_pic,
+    name: "Masala Dosa",
+    description: "Crispy dosa with potato masala, chutney and sambar",
+    price: "Rs. 60",
+    image: dosaPic,
     category: "Breakfast",
   },
 ];
