@@ -1,96 +1,80 @@
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import dosaPic from "@/assets/dosa_pic.jpg";
-import bunsPic from "@/assets/buns_pic.jpg";
-import idliPic from "@/assets/idli_pic.jpg";
-import fries from "@/assets/fries.jpg";
-
-const menuItems = [
-  {
-    id: 1,
-    name: "Mangalore Buns",
-    description: "Freshly made Mangalore Buns with coconut chutney",
-    price: "Rs. 50",
-    image: bunsPic,
-    category: "South Indian",
-  },
-  {
-    id: 2,
-    name: "Mini Meals",
-    description: "Rice with sambar, rasam, chapati/puri and sides",
-    price: "Rs. 120",
-    image: dosaPic,
-    category: "South Indian",
-  },
-  {
-    id: 3,
-    name: "Idli Vada",
-    description: "Soft idlis with crispy vada, sambar and chutney",
-    price: "Rs. 40",
-    image: idliPic,
-    category: "Breakfast",
-  },
-  {
-    id: 4,
-    name: "Masala Dosa",
-    description: "Crispy dosa with potato masala, chutney and sambar",
-    price: "Rs. 60",
-    image: dosaPic,
-    category: "Breakfast",
-  },
-];
+import MenuCard from "@/components/MenuCard";
+import { categories, getItemsByCategory } from "@/data/menuData";
+import { Search } from "lucide-react";
 
 const Menu = () => {
+  const [activeCategory, setActiveCategory] = useState("all");
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const filteredItems = getItemsByCategory(activeCategory).filter(item =>
+    item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    item.description.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h1 className="text-5xl font-bold mb-4 text-foreground">Our Menu</h1>
+          {/* Header */}
+          <div className="text-center mb-10">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+              Our <span className="text-primary">Menu</span>
+            </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Explore our delicious selection of freshly prepared dishes
+              Authentic South Indian cuisine made with love and tradition
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {menuItems.map((item) => (
-              <div
-                key={item.id}
-                className="bg-card rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+          {/* Search Bar */}
+          <div className="max-w-md mx-auto mb-8">
+            <div className="relative">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+              <input
+                type="text"
+                placeholder="Search dishes..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full pl-12 pr-4 py-3 bg-card border border-border rounded-full focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+              />
+            </div>
+          </div>
+
+          {/* Category Tabs */}
+          <div className="flex flex-wrap justify-center gap-2 mb-10">
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => setActiveCategory(category.id)}
+                className={`px-4 py-2 rounded-full font-medium transition-all duration-300 flex items-center gap-2 ${
+                  activeCategory === category.id
+                    ? "bg-primary text-primary-foreground shadow-lg scale-105"
+                    : "bg-card text-muted-foreground hover:bg-muted hover:text-foreground border border-border"
+                }`}
               >
-                <div className="relative h-64 overflow-hidden">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                  />
-                  <Badge className="absolute top-4 left-4" variant="secondary">
-                    {item.category}
-                  </Badge>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 text-card-foreground">
-                    {item.name}
-                  </h3>
-                  <p className="text-muted-foreground mb-4">
-                    {item.description}
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-2xl font-bold text-accent">
-                      {item.price}
-                    </span>
-                    <Button className="bg-primary hover:bg-primary/90">
-                      Add to Cart
-                    </Button>
-                  </div>
-                </div>
-              </div>
+                <span>{category.icon}</span>
+                <span className="hidden sm:inline">{category.name}</span>
+              </button>
             ))}
           </div>
+
+          {/* Menu Grid */}
+          {filteredItems.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {filteredItems.map((item, index) => (
+                <MenuCard key={item.id} item={item} index={index} />
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-16">
+              <p className="text-2xl text-muted-foreground">No items found</p>
+              <p className="text-muted-foreground mt-2">Try a different search or category</p>
+            </div>
+          )}
         </div>
       </main>
 

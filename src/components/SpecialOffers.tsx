@@ -1,79 +1,75 @@
-import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
-import { Clock, Percent, Tag } from "lucide-react";
+import { Gift, Percent, Clock } from "lucide-react";
 
 const offers = [
   {
-    id: 1,
-    title: "Happy Hour Special",
-    description: "Get 30% off on all beverages between 3-5 PM",
-    discount: "30% OFF",
-    icon: Clock,
-    color: "bg-secondary",
-  },
-  {
-    id: 2,
-    title: "Weekend Deal",
-    description: "Buy 2 Main Courses, Get 1 Dessert Free",
-    discount: "BOGO",
     icon: Percent,
-    color: "bg-accent",
+    title: "20% Off First Order",
+    description: "Use code FIRST20 at checkout",
+    badge: "New User",
+    color: "from-accent to-secondary",
   },
   {
-    id: 3,
-    title: "First Order Bonus",
-    description: "New customers get $5 off on orders above $20",
-    discount: "$5 OFF",
-    icon: Tag,
-    color: "bg-primary",
+    icon: Gift,
+    title: "Combo Deals",
+    description: "Save ₹50 on meal combos",
+    badge: "Popular",
+    color: "from-primary to-teal-light",
+  },
+  {
+    icon: Clock,
+    title: "Happy Hours",
+    description: "3PM-5PM: Free filter coffee with any meal",
+    badge: "Limited",
+    color: "from-secondary to-accent",
   },
 ];
 
 const SpecialOffers = () => {
   return (
-    <section className="py-16 bg-background relative overflow-hidden">
+    <section className="py-16 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Special Offers
+            Special <span className="text-accent">Offers</span>
           </h2>
-          <p className="text-lg text-muted-foreground">
-            Don't miss out on our amazing deals and discounts
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Don't miss out on these amazing deals!
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {offers.map((offer, index) => {
-            const Icon = offer.icon;
-            return (
-              <div
-                key={offer.id}
-                className="relative bg-card rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/20 to-transparent rounded-bl-full" />
-                
-                <div className={`${offer.color} w-16 h-16 rounded-2xl flex items-center justify-center mb-6 relative z-10`}>
-                  <Icon className="h-8 w-8 text-white" />
-                </div>
-
-                <Badge variant="secondary" className="mb-4">
-                  {offer.discount}
-                </Badge>
-
-                <h3 className="text-2xl font-bold mb-3 text-card-foreground">
-                  {offer.title}
-                </h3>
-                <p className="text-muted-foreground mb-6">
-                  {offer.description}
-                </p>
-
-                <Button className="w-full bg-primary hover:bg-primary/90">
-                  Claim Offer
-                </Button>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {offers.map((offer, index) => (
+            <Link
+              key={offer.title}
+              to="/menu"
+              className="group relative bg-card rounded-2xl p-6 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-border/50 animate-fade-in"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              {/* Gradient background */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${offer.color} opacity-5 group-hover:opacity-10 transition-opacity`} />
+              
+              <Badge variant="secondary" className="mb-4">
+                {offer.badge}
+              </Badge>
+              
+              <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${offer.color} flex items-center justify-center mb-4 shadow-lg`}>
+                <offer.icon className="w-6 h-6 text-white" />
               </div>
-            );
-          })}
+              
+              <h3 className="text-xl font-bold text-card-foreground mb-2 group-hover:text-primary transition-colors">
+                {offer.title}
+              </h3>
+              <p className="text-muted-foreground">
+                {offer.description}
+              </p>
+              
+              <div className="mt-4 text-primary font-medium text-sm group-hover:underline">
+                Claim offer →
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </section>
