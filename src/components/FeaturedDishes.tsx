@@ -1,46 +1,45 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import nuggets from "@/assets/nuggets.jpg";
-import macCheese from "@/assets/mac-cheese.jpg";
-import fries from "@/assets/fries.jpg";
-import burger from "@/assets/burger.jpg";
+import dosaPic from "@/assets/dosa_pic.jpg";
+import bunsPic from "@/assets/buns_pic.jpg";
+import idliPic from "@/assets/idli_pic.jpg";
 
 const dishes = [
   {
     id: 1,
-    name: "Manglore Buns",
-    description: "Freshly Made",
-    price: "Rs.50",
-    image: nuggets,
+    name: "Mangalore Buns",
+    description: "Soft, fluffy sweet buns with coconut chutney",
+    price: "Rs. 50",
+    image: bunsPic,
     badge: "Popular",
     badgeVariant: "default" as const,
   },
   {
     id: 2,
     name: "Masala Dosa",
-    description: "Crispy and Soft",
-    price: "Rs.40",
-    image: macCheese,
+    description: "Crispy dosa with spiced potato filling & sambar",
+    price: "Rs. 60",
+    image: dosaPic,
     badge: "Chef's Special",
     badgeVariant: "secondary" as const,
   },
   {
     id: 3,
-    name: "Loaded French Fries",
-    description: "Crispy fries with special seasoning and dipping sauce",
-    price: "Rs.90",
-    image: fries,
-    badge: "Hot Deal",
-    badgeVariant: "destructive" as const,
+    name: "Idli Vada Combo",
+    description: "Soft idlis with crispy vada, sambar & chutney",
+    price: "Rs. 40",
+    image: idliPic,
+    badge: "Best Seller",
+    badgeVariant: "default" as const,
   },
   {
     id: 4,
-    name: "Aloo Tikki Burger",
-    description: "Premium beef patty with fresh vegetables and signature sauce",
-    price: "Rs.50",
-    image: burger,
-    badge: "Best Seller",
-    badgeVariant: "default" as const,
+    name: "Rava Dosa",
+    description: "Crispy semolina dosa with onions & spices",
+    price: "Rs. 55",
+    image: dosaPic,
+    badge: "Hot Deal",
+    badgeVariant: "destructive" as const,
   },
 ];
 
