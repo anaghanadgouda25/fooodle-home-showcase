@@ -6,6 +6,9 @@ import nuggets from "@/assets/nuggets.jpg";
 import macCheese from "@/assets/mac-cheese.jpg";
 import fries from "@/assets/fries.jpg";
 import burger from "@/assets/burger.jpg";
+import burger from "@/assets/dosa_pic.jpg";
+import burger from "@/assets/buns_pic.jpg";
+import burger from "@/assets/idli_pic.jpg";
 
 const menuItems = [
   {
@@ -13,7 +16,7 @@ const menuItems = [
     name: "Manglore Buns",
     description: "Freshly made manglore Buns with chutney",
     price: "Rs. 50",
-    image: nuggets,
+    image: dosa_pic,
     category: "South Indian",
   },
   {
@@ -21,7 +24,7 @@ const menuItems = [
     name: "Mini Meals",
     description: "Meal containing Rice and Chapati/Puri",
     price: "Rs.120",
-    image: macCheese,
+    image: buns_pic,
     category: "South Indian",
   },
   {
@@ -37,7 +40,7 @@ const menuItems = [
     name: " Masala Dosa",
     description: "Masala Dosa with chutney and sambar",
     price: "Rs. 40",
-    image: burger,
+    image: idli_pic,
     category: "Breakfast",
   },
 ];
