@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import buns_pic from "@/assets/buns_pic.jpg";
 import dosa_pic from "@/assets/dosa_pic.jpg";
 import idli_pic from "@/assets/idli_pic.jpg";
-import burger from "@/assets/burger.jpg";
+
 
 const menuItems = [
   {
