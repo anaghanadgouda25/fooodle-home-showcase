@@ -2,10 +2,10 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import buns_pic from "@/assets/buns_pic.jpg";
-import dosa_pic from "@/assets/dosa_pic.jpg";
-import idli_pic from "@/assets/idli_pic.jpg";
-
+import nuggets from "@/assets/nuggets.jpg";
+import macCheese from "@/assets/mac-cheese.jpg";
+import fries from "@/assets/fries.jpg";
+import burger from "@/assets/burger.jpg";
 
 const menuItems = [
   {
@@ -13,7 +13,7 @@ const menuItems = [
     name: "Manglore Buns",
     description: "Freshly made manglore Buns with chutney",
     price: "Rs. 50",
-    image: buns_pic,
+    image: nuggets,
     category: "South Indian",
   },
   {
@@ -21,7 +21,7 @@ const menuItems = [
     name: "Mini Meals",
     description: "Meal containing Rice and Chapati/Puri",
     price: "Rs.120",
-    image: dosa_pic,
+    image: macCheese,
     category: "South Indian",
   },
   {
@@ -29,7 +29,7 @@ const menuItems = [
     name: "Idly Vada",
     description: "A plate of Idly Vada with Sambar and Chutney",
     price: "Rs.40",
-    image: idli_pic,
+    image: fries,
     category: "Breakfast",
   },
   {
@@ -37,7 +37,7 @@ const menuItems = [
     name: " Masala Dosa",
     description: "Masala Dosa with chutney and sambar",
     price: "Rs. 40",
-    image: dosa_pic,
+    image: burger,
     category: "Breakfast",
   },
 ];

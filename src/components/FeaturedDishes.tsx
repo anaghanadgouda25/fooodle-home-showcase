@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import dosa_pic from "@/assets/dosa_pic.jpg";
-import buns_pic from "@/assets/buns_pic.jpg";
-import idli_pic from "@/assets/idli_pic.jpg";
+import nuggets from "@/assets/nuggets.jpg";
+import macCheese from "@/assets/mac-cheese.jpg";
+import fries from "@/assets/fries.jpg";
 import burger from "@/assets/burger.jpg";
 
 const dishes = [
@@ -11,7 +11,7 @@ const dishes = [
     name: "Manglore Buns",
     description: "Freshly Made",
     price: "Rs.50",
-    image: buns_pic,
+    image: nuggets,
     badge: "Popular",
     badgeVariant: "default" as const,
   },
@@ -20,7 +20,7 @@ const dishes = [
     name: "Masala Dosa",
     description: "Crispy and Soft",
     price: "Rs.40",
-    image: dosa_pic,
+    image: macCheese,
     badge: "Chef's Special",
     badgeVariant: "secondary" as const,
   },
