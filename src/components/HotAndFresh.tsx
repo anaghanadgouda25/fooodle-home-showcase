@@ -5,33 +5,33 @@ import { Flame } from "lucide-react";
 const liveItems = [
   {
     id: 1,
-    name: "Spicy Chicken Wings",
-    prepTime: "15 min",
-    available: 8,
+    name: "Hot Masala Dosa",
+    prepTime: "8 min",
+    available: 10,
   },
   {
     id: 2,
-    name: "Veggie Supreme Pizza",
-    prepTime: "20 min",
-    available: 5,
+    name: "Fresh Idli Sambar",
+    prepTime: "5 min",
+    available: 15,
   },
   {
     id: 3,
-    name: "BBQ Pulled Pork Sandwich",
-    prepTime: "12 min",
+    name: "Medu Vada",
+    prepTime: "10 min",
     available: 12,
   },
   {
     id: 4,
-    name: "Loaded Nachos",
-    prepTime: "10 min",
-    available: 15,
+    name: "Uttapam",
+    prepTime: "12 min",
+    available: 8,
   },
   {
     id: 5,
-    name: "Caesar Salad Bowl",
-    prepTime: "8 min",
-    available: 10,
+    name: "Pongal",
+    prepTime: "10 min",
+    available: 6,
   },
 ];
 
