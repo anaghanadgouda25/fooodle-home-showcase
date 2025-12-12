@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import MenuCard from "@/components/MenuCard";
@@ -6,8 +7,29 @@ import { categories, getItemsByCategory } from "@/data/menuData";
 import { Search } from "lucide-react";
 
 const Menu = () => {
+  const [searchParams] = useSearchParams();
+  const categoryFromUrl = searchParams.get("category");
+  
   const [activeCategory, setActiveCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
+
+  // Sync category from URL on mount or URL change
+  useEffect(() => {
+    if (categoryFromUrl) {
+      // Map URL slugs to category IDs
+      const categoryMap: Record<string, string> = {
+        "breakfast": "breakfast",
+        "dosa": "dosa",
+        "idli": "breakfast", // Map idli to breakfast category
+        "meals": "meals",
+        "snacks": "snacks",
+        "beverages": "beverages",
+        "desserts": "desserts",
+      };
+      const mappedCategory = categoryMap[categoryFromUrl] || "all";
+      setActiveCategory(mappedCategory);
+    }
+  }, [categoryFromUrl]);
 
   const filteredItems = getItemsByCategory(activeCategory).filter(item =>
     item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||

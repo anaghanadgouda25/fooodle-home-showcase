@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import CategoryGrid from "@/components/CategoryGrid";
+import CategoryList from "@/components/CategoryList";
 import FeaturedDishes from "@/components/FeaturedDishes";
 import SpecialOffers from "@/components/SpecialOffers";
 import HotAndFresh from "@/components/HotAndFresh";
@@ -11,7 +11,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <Hero />
-      <CategoryGrid />
+      <CategoryList />
       <FeaturedDishes />
       <SpecialOffers />
       <HotAndFresh />
