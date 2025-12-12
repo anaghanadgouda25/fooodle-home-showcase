@@ -3,7 +3,6 @@ import CategoryCard from "./CategoryCard";
 // Import category images
 import categoryBreakfast from "@/assets/category-breakfast.jpg";
 import categoryDosa from "@/assets/category-dosa.jpg";
-import categoryIdli from "@/assets/category-idli.jpg";
 import categoryMeals from "@/assets/category-meals.jpg";
 import categorySnacks from "@/assets/category-snacks.jpg";
 import categoryBeverages from "@/assets/category-beverages.jpg";
@@ -27,17 +26,10 @@ export const categoryList: Category[] = [
   },
   {
     id: "dosa",
-    name: "Dosa",
+    name: "Dosa Types",
     slug: "dosa",
     image: categoryDosa,
     itemCount: 12,
-  },
-  {
-    id: "idli",
-    name: "Idli & Vada",
-    slug: "breakfast",
-    image: categoryIdli,
-    itemCount: 6,
   },
   {
     id: "meals",
